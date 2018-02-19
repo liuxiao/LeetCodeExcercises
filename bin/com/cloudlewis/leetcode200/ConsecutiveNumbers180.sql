@@ -1,0 +1,5 @@
+select num ConsecutiveNums from (select num, count(num) c from Logs group by Num) a where a.c > 3;
+
+Select DISTINCT l1.Num ConsecutiveNums from Logs l1, Logs l2, Logs l3 
+where l1.Id=l2.Id-1 and l2.Id=l3.Id-1 
+and l1.Num=l2.Num and l2.Num=l3.Num
